@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import ProductList from "./components/ProductList";
+import ProductList from './components/ProductList';
+import InfoBuy from './components/InfoBuy';
 
 import pecel from './assets/image/pecel.jpg';
 import rendang from './assets/image/rendang.jpg';
@@ -19,7 +20,7 @@ export default class App extends Component {
         price: 'Rp 15000',
         imageSrc: pecel,
         imageAlt: 'Gambar Pecel',
-        category : 'Makanan',
+        category: 'Makanan',
       },
       {
         id: 2,
@@ -27,7 +28,7 @@ export default class App extends Component {
         price: 'Rp 25000',
         imageSrc: rendang,
         imageAlt: 'Gambar Rendang',
-        category : 'Makanan',
+        category: 'Makanan',
       },
       {
         id: 3,
@@ -35,7 +36,7 @@ export default class App extends Component {
         price: 'Rp 20000',
         imageSrc: pempek,
         imageAlt: 'Gambar Pempek',
-        category : 'Makanan',
+        category: 'Makanan',
       },
       {
         id: 4,
@@ -43,7 +44,7 @@ export default class App extends Component {
         price: 'Rp 22000',
         imageSrc: sate,
         imageAlt: 'Gambar Sate',
-        category : 'Makanan',
+        category: 'Makanan',
       },
       {
         id: 5,
@@ -51,7 +52,7 @@ export default class App extends Component {
         price: 'Rp 16000',
         imageSrc: ronde,
         imageAlt: 'Gambar Ronde',
-        category : 'Minuman',
+        category: 'Minuman',
       },
       {
         id: 6,
@@ -59,7 +60,7 @@ export default class App extends Component {
         price: 'Rp 17000',
         imageSrc: sekoteng,
         imageAlt: 'Gambar Sekoteng',
-        category : 'Minuman',
+        category: 'Minuman',
       },
       {
         id: 7,
@@ -67,7 +68,7 @@ export default class App extends Component {
         price: 'Rp 14000',
         imageSrc: onde,
         imageAlt: 'Gambar Onde-onde',
-        category : 'Cemilan',
+        category: 'Cemilan',
       },
       {
         id: 8,
@@ -75,31 +76,45 @@ export default class App extends Component {
         price: 'Rp 14000',
         imageSrc: klepon,
         imageAlt: 'Gambar Klepon',
-        category : 'Cemilan',
+        category: 'Cemilan',
       },
-    ]
+    ];
+
+    const pemilik = [
+      {
+        name: 'Adib B',
+        nomor: '089xxxxxxxx',
+        email: 'adibbl@gmail.com',
+      },
+      {
+        name: 'Hani',
+        nomor: '088xxxxxxxx',
+        email: 'haniku@gmail.com',
+      },
+    ];
+
     return (
       <div className="bg-white">
         <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
           <h1 className="text-center font-bold text-3xl">Produk Kami</h1>
-          <br></br><br></br>
+          <br></br>
+          <br></br>
           <div className="grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
-          {products.map((product) => {
-            return (
-              <ProductList
-                id = {product.id}
-                name = {product.name}
-                price = {product.price}
-                imageSrc = {product.imageSrc}
-                imageAlt = {product.imageAlt}
-                category = {product.category}
-              />
-            )
-          })}             
+            {products.map((product) => {
+              return <ProductList id={product.id} name={product.name} price={product.price} imageSrc={product.imageSrc} imageAlt={product.imageAlt} category={product.category} />;
+            })}
+          </div>
+          <br></br>
+          <br></br>
+          <h1 className="font-bold text-3xl">Hubungi Kami</h1>
+          <div className="">
+            {pemilik.map((test) => {
+              return <InfoBuy name={test.name} nomor={test.nomor} email={test.email} />;
+            })}
           </div>
         </div>
+        <footer />
       </div>
-    )
+    );
   }
 }
-
