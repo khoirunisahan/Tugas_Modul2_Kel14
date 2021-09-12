@@ -106,11 +106,14 @@ export default class App extends Component {
           </div>
           <br></br>
           <br></br>
-          <h1 className="font-bold text-3xl">Hubungi Kami</h1>
-          <div className="">
-            {pemilik.map((test) => {
-              return <InfoBuy name={test.name} nomor={test.nomor} email={test.email} />;
-            })}
+
+          <div className="bg-black">
+            <h2 className="font-bold text-3xl text-white">Hubungi Kami</h2>
+            <div className="text-white">
+              {pemilik.map((test) => {
+                return <InfoBuy name={test.name} nomor={test.nomor} email={test.email} />;
+              })}
+            </div>
           </div>
         </div>
         <footer />
